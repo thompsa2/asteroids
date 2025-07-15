@@ -43,6 +43,11 @@ def main():
             if player.check_collision(rock):
                 print("Game over!")
                 sys.exit()
+            for bullet in shots:
+                if rock.check_collision(bullet):
+                    rock.split()
+                    bullet.kill()
+        
 
         screen.fill("black")
         
